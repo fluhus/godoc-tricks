@@ -91,6 +91,9 @@ const (
 //      // Output: Hello
 //  }
 //
+// Notice that the tricks brought here (titles, code blocks, links etc.) don't work
+// in example documentation.
+//
 // For full documentation of examples, see:
 // http://golang.org/pkg/testing/
 type Examples int
@@ -104,3 +107,8 @@ type Examples int
 //  //  fmt.Println("Hello")
 //  // To do that, simply add an extra indent to your comment's text.
 type CodeBlocks int
+
+// Web addresses will automatically generate actual links in the HTML output,
+// like this: http://www.golang.org
+type Links int
+

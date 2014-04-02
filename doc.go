@@ -54,12 +54,14 @@ type Paragraphs int
 // While this code:
 //  // Sentence 1.
 //  //
-//  // Sentence 2
+//  // Sentence 2.
 // will yield:
 //
 // Sentence 1.
 //
-// Sentence 2
+// Sentence 2.
+//
+// See documentation here: http://golang.org/pkg/go/doc/#ToHTML
 type Titles int
 
 // While there are no built in enums in go, you can use types and constants
@@ -111,4 +113,19 @@ type CodeBlocks int
 // Web addresses will automatically generate actual links in the HTML output,
 // like this: http://www.golang.org
 type Links int
+
+// Methods are functions with receivers. Godoc associates methods with their
+// receivers and attaches their documentation. See below.
+type Methods int
+
+// Methods are attached to their receiver type in the godoc, regardless of
+// their physical location in the code.
+func (Methods) Foo() {}
+
+// Pointer receivers are also associated in the same way.
+func (*Methods) Foo2() {}
+
+// Functions that return a type (or a pointer to it) are also associated
+// with it.
+func NewMethods() *Methods {}
 

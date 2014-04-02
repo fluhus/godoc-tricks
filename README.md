@@ -1,4 +1,8 @@
 godoc-tricks
 ============
 
-Tricks for working with the godoc tool.
+This tutorial deals with tricks for making your godoc organized and neat.
+This is a compilation of tricks I've collected and couldn't find a
+comprehensive guide for.
+
+The doc can be found at: [godoc-tricks](https://godoc.org/github.com/fluhus/godoc-tricks)

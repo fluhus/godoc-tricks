@@ -2,9 +2,12 @@
 // This is a compilation of tricks I've collected and couldn't find a
 // comprehensive guide for.
 //
-// Notice that this doc is written in godoc itself as a package's documentation.
+// Notice that this doc is written in godoc itself as package documentation.
 // The defined types are just for making the table of contents at the
-// head of the page. They have no meanings as types.
+// head of the page; they have no meanings as types.
+//
+// If you find anything that you think is worth adding to the list, open an
+// issue on this tutorial's GitHub page!
 //
 // Author: Amit Lavon
 package godoctricks
@@ -65,14 +68,14 @@ type Paragraphs int
 type Titles int
 
 // While there are no built in enums in go, you can use types and constants
-// to create them. Take this Enums type for example, if you have a constant
-// clause where all the constants are of the same type, it will be attached
-// to that type's godoc. See below.
-type Enums int
+// to mock them (documentation-wise). Take this Mock_enums type for example,
+// if you have a constant clause where all the constants are of the same type,
+// it will be attached to that type's godoc. See below.
+type Mock_enums int
 
 const (
-	A Enums = 1
-	B Enums = 2
+	A Mock_enums = 1
+	B Mock_enums = 2
 )
 
 // You can place usage examples in your godoc.
@@ -108,7 +111,7 @@ type Examples int
 //  // You can embed blocks of code in your godoc, such as this:
 //  //  fmt.Println("Hello")
 //  // To do that, simply add an extra indent to your comment's text.
-type CodeBlocks int
+type Code_blocks int
 
 // Web addresses will automatically generate actual links in the HTML output,
 // like this: http://www.golang.org
@@ -125,7 +128,7 @@ func (Methods) Foo() {}
 // Pointer receivers are also associated in the same way.
 func (*Methods) Foo2() {}
 
-// Functions that return a type (or a pointer to it) are also associated
-// with it.
+// Functions that construct an instance of a type (or a pointer to it) are
+// associated with the returned type.
 func NewMethods() *Methods {}
 

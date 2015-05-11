@@ -42,7 +42,7 @@ type Paragraphs int
 
 // You can make titles in your godoc. A title is a line that is separated from
 // its following line by an empty line, begins with a capital letter and doesn't
-// end with panctuation.
+// end with punctuation.
 //
 // For example, the code:
 //  // Sentence 1

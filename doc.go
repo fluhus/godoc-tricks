@@ -6,8 +6,8 @@
 // The defined types are just for making the table of contents at the
 // head of the page; they have no meanings as types.
 //
-// If you find anything that you think is worth adding to the list, feel
-// free to open an issue on this tutorial's GitHub page!
+// If you have any suggestion or comment, please feel free to open an issue on
+// this tutorial's GitHub page!
 //
 // Author: Amit Lavon
 package godoctricks

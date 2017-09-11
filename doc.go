@@ -1,6 +1,6 @@
-// This tutorial deals with tricks for making your godoc organized and neat.
-// This is a compilation of tricks I've collected and couldn't find a
-// comprehensive guide for.
+// Package godoctricks is a tutorial that deals with tricks for making your
+// godoc organized and neat. This is a compilation of tricks I've collected and
+// couldn't find a comprehensive guide for.
 //
 // Notice that this doc is written in godoc itself as package documentation.
 // The defined types are just for making the table of contents at the
@@ -12,14 +12,15 @@
 // Author: Amit Lavon
 package godoctricks
 
-// You can output an HTML page if you want a fancier, JavaDoc-like output.
-// For that, make sure GOPATH is set correctly and run the command:
+// You can see your godoc rendered as HTML by running a local godoc server.
+// This is great for previewing your godoc before committing changes. To do
+// that, Make sure your code is in GOPATH and run:
+//  godoc -http ":8080"
+// Go to http://localhost:8080/pkg and you should see your packages on the
+// list.
+//
+// If you want the raw HTML, you can run:
 //  godoc -url=/pkg/your_package > your_page.html
-// Now if you don't have a godoc server, you'll get an ugly looking page,
-// since there is no CSS and no script files. Link your HTML
-// to some godoc website's CSS and JS files. I add http://golang.org/ as prefix
-// to the CSS file address (found at head section) and the script files (found
-// at the bottom of the page's source).
 type HTML int
 
 // To start a new paragraph, add an empty line in the comment between the 2
@@ -130,5 +131,4 @@ func (*Methods) Foo2() {}
 
 // Functions that construct an instance of a type (or a pointer to it) are
 // associated with the returned type.
-func NewMethods() *Methods {}
-
+func NewMethods() *Methods { return nil }

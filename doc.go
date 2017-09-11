@@ -9,7 +9,7 @@
 // If you have any suggestion or comment, please feel free to open an issue on
 // this tutorial's GitHub page!
 //
-// Author: Amit Lavon
+// By Amit Lavon
 package godoctricks
 
 // You can see your godoc rendered as HTML by running a local godoc server.
@@ -22,6 +22,11 @@ package godoctricks
 // If you want the raw HTML, you can run:
 //  godoc -url=/pkg/your_package > your_page.html
 type HTML int
+
+// Go code that you upload to public repositories on github appears
+// automatically on the godoc website. Just like this tutorial! Just check in
+// your code and watch as it appears. Use this page's URL as reference.
+type Github int
 
 // To start a new paragraph, add an empty line in the comment between the 2
 // paragraphs.

@@ -1,5 +1,7 @@
-// Copyright Some Company Corp
-// All Rights Reserved
+// This is a file header. It is separated from the package doc below with an
+// empty line so it is ignored by Godoc. This area can be used for copyright
+// notifications and/or internal descriptions of the file that you do not want
+// to show.
 
 // Package godoctricks is a tutorial that deals with tricks for making your
 // godoc organized and neat. This is a compilation of tricks I've collected and

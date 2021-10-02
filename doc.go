@@ -17,16 +17,15 @@
 // By Amit Lavon
 package godoctricks
 
-// You can see your godoc rendered as HTML by running a local godoc server.
-// This is great for previewing your godoc before committing changes. To do
-// that, Make sure your code is in GOPATH and run:
-//  godoc -http ":8080"
-// Go to http://localhost:8080/pkg and you should see your packages on the
-// list.
+// You can run a local godoc server. This is helpful for previewing
+// documentation, or for cases where you don't have a stable internet
+// connection.
 //
-// If you want the raw HTML, you can run:
-//  godoc -url=/pkg/your_package > your_page.html
-type HTML int
+// First you need to get the godoc tool:
+//  go get golang.org/x/tools/cmd/godoc
+// Then simply running godoc will make it listen on http://localhost:6060.
+// Run with -h to see how you can control the port number and other options.
+type Local_server int
 
 // Go code that you upload to public repositories on github appears
 // automatically on the godoc website. Just like this tutorial! Just check in
@@ -154,13 +153,3 @@ type Bugs int
 
 // BUG(amit): This is an example bug.
 // See the bugs section.
-
-// You can run a local godoc server. This is helpful for previewing
-// documentation, or for cases where you don't have a stable internet
-// connection.
-//
-// First you need to get the godoc tool:
-//  go get golang.org/x/tools/cmd/godoc
-// Then simply running godoc will make it listen on localhost:6060.
-// Run with -h to see how you can control the port number and other options.
-type Local_server int

@@ -154,3 +154,13 @@ type Bugs int
 
 // BUG(amit): This is an example bug.
 // See the bugs section.
+
+// You can run a local godoc server. This is helpful for previewing
+// documentation, or for cases where you don't have a stable internet
+// connection.
+//
+// First you need to get the godoc tool:
+//  go get golang.org/x/tools/cmd/godoc
+// Then simply running godoc will make it listen on localhost:6060.
+// Run with -h to see how you can control the port number and other options.
+type Local_server int

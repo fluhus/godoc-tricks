@@ -25,7 +25,7 @@ package godoctricks
 //  go get golang.org/x/tools/cmd/godoc
 // Then simply running godoc will make it listen on http://localhost:6060.
 // Run with -h to see how you can control the port number and other options.
-type Local_server int
+type LocalServer int
 
 // Go code that you upload to public repositories on github appears
 // automatically on the godoc website. Just like this tutorial! Just check in
@@ -78,14 +78,14 @@ type Paragraphs int
 type Titles int
 
 // While there are no built in enums in go, you can use types and constants
-// to mock them (documentation-wise). Take this Mock_enums type for example,
-// if you have a constant clause where all the constants are of the same type,
-// it will be attached to that type's godoc. See below.
-type Mock_enums int
+// to mock them (documentation-wise). Take this MockEnums type for example,
+// if you have a const/var clause where all the values are of the same
+// type, it will be attached to that type's godoc. See below.
+type MockEnums int
 
 const (
-	A Mock_enums = 1
-	B Mock_enums = 2
+	A MockEnums = 1
+	B MockEnums = 2
 )
 
 // You can place usage examples in your godoc.
@@ -121,7 +121,7 @@ type Examples int
 //  // You can embed blocks of code in your godoc, such as this:
 //  //  fmt.Println("Hello")
 //  // To do that, simply add an extra indent to your comment's text.
-type Code_blocks int
+type CodeBlocks int
 
 // Web addresses will automatically generate actual links in the HTML output,
 // like this: http://www.golang.org

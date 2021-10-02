@@ -142,3 +142,15 @@ func (*Methods) Foo2() {}
 // Functions that construct an instance of a type (or a pointer to it) are
 // associated with the returned type.
 func NewMethods() *Methods { return nil }
+
+// You can mention bugs in the documentation. The syntax for that is like so:
+//  // BUG(username): Some information.
+//  // Some more information.
+// This creates a section for bugs where each bug block is shown.
+// You can use words other than "BUG", like "TODO". By default, only BUG notes
+// are shown. If you run a godoc server locally, you can control that with
+// the -notes argument. For example, -notes="BUG|TODO".
+type Bugs int
+
+// BUG(amit): This is an example bug.
+// See the bugs section.

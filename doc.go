@@ -3,13 +3,12 @@
 // notifications and/or internal descriptions of the file that you do not want
 // to show.
 
-// Package godoctricks is a tutorial that deals with tricks for making your
-// godoc organized and neat. This is a compilation of tricks I've collected and
-// couldn't find a comprehensive guide for.
+// Package godoctricks is a tutorial on the features of GoDoc. It is meant to
+// help eveyone make the most out of this feature of Go.
 //
 // Notice that this doc is written in godoc itself as package documentation.
 // The defined types are just for making the table of contents at the
-// head of the page; they have no meanings as types.
+// head of the page; they have no meanings as actual types.
 //
 // If you have any suggestion or comment, please feel free to open an issue on
 // this tutorial's GitHub page!
@@ -30,6 +29,8 @@ type LocalServer int
 // Go code that you upload to public repositories on github appears
 // automatically on the godoc website. Just like this tutorial! Just check in
 // your code and watch as it appears. Use this page's URL as reference.
+//
+// The godoc page gets updated once you make a new release.
 type Github int
 
 // To start a new paragraph, add an empty line in the comment between the 2
@@ -41,7 +42,7 @@ type Github int
 //  //
 //  // Paragraph 2.
 //  // Still Paragraph 2.
-// will yield:
+// yields:
 //
 // Paragraph 1.
 // Still paragraph 1.
@@ -58,7 +59,7 @@ type Paragraphs int
 //  // Sentence 1
 //  //
 //  // Sentence 2
-// will yield:
+// yields:
 //
 // Sentence 1
 //
@@ -68,7 +69,7 @@ type Paragraphs int
 //  // Sentence 1.
 //  //
 //  // Sentence 2.
-// will yield:
+// yields:
 //
 // Sentence 1.
 //
@@ -78,14 +79,14 @@ type Paragraphs int
 type Titles int
 
 // While there are no built in enums in go, you can use types and constants
-// to mock them (documentation-wise). Take this MockEnums type for example,
-// if you have a const/var clause where all the values are of the same
+// to make enum lookalikes (documentation-wise). Take this Enums type for
+// example; if you have a const/var clause where all the values are of the same
 // type, it will be attached to that type's godoc. See below.
-type MockEnums int
+type Enums int
 
 const (
-	A MockEnums = 1
-	B MockEnums = 2
+	A Enums = 1
+	B Enums = 2
 )
 
 // You can place usage examples in your godoc.

@@ -85,8 +85,8 @@ type Titles int
 type Enums int
 
 const (
-	A Enums = 1
-	B Enums = 2
+	A Enums = iota
+	B
 )
 
 // You can place usage examples in your godoc.

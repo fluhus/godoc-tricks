@@ -1,4 +1,4 @@
-package godoctricks_test
+package godoctricks
 
 import (
 	"fmt"

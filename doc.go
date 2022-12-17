@@ -28,7 +28,9 @@ package godoctricks
 // connection.
 //
 // First you need to get the godoc tool:
-//  go get golang.org/x/tools/cmd/godoc
+//
+//	go get golang.org/x/tools/cmd/godoc
+//
 // Then simply running godoc will make it listen on http://localhost:6060.
 // Run with -h to see how you can control the port number and other options.
 type LocalServer int
@@ -44,11 +46,13 @@ type Github int
 // paragraphs.
 //
 // For example:
-//  // Paragraph 1.
-//  // Still paragraph 1.
-//  //
-//  // Paragraph 2.
-//  // Still Paragraph 2.
+//
+//	// Paragraph 1.
+//	// Still paragraph 1.
+//	//
+//	// Paragraph 2.
+//	// Still Paragraph 2.
+//
 // Results in:
 //
 // Paragraph 1.
@@ -61,19 +65,21 @@ type Paragraphs int
 // You can make headings in your godoc.
 // An explicit heading line starts with a '#' and is separated from the previous
 // and next paragraphs with empty comment lines.
-// An implicit heading is the same without the '#'.
+// An implicit heading is the same without the '#' (`go fmt` will automatically add a leading #).
 // It needs to begin with a capital letter and not end with punctuation.
 //
 // See the full documentation here: https://go.dev/doc/comment#headings
 //
 // For example, this code:
-//  // # Explicit Heading
-//  //
-//  // Yada yada.
-//  //
-//  // Implicit Heading
-//  //
-//  // Yolo yolo.
+//
+//	// # Explicit Heading
+//	//
+//	// Yada yada.
+//	//
+//	// Implicit Heading
+//	//
+//	// Yolo yolo.
+//
 // Results in:
 //
 // # Explicit Heading
@@ -109,10 +115,11 @@ const (
 //
 // You can document an example's output, by adding an output comment at its end.
 // The output comment must begin with "Output:", as shown below:
-//  func ExampleExamples_output() {
-//      fmt.Println("Hello")
-//      // Output: Hello
-//  }
+//
+//	func ExampleExamples_output() {
+//	    fmt.Println("Hello")
+//	    // Output: Hello
+//	}
 //
 // Notice that the tricks brought here (headings, code blocks, links etc.)
 // don't work in example documentation.
@@ -122,29 +129,32 @@ const (
 type Examples int
 
 // You can embed blocks of code in your godoc, such as this:
-//  fmt.Println("Hello")
+//
+//	fmt.Println("Hello")
+//
 // To do that, simply add an extra indent to your comment's text.
 //
 // For example, the code of the first lines of this section looks like this:
-//  // You can embed blocks of code in your godoc, such as this:
-//  //  fmt.Println("Hello")
-//  // To do that, simply add an extra indent to your comment's text.
+//
+//	// You can embed blocks of code in your godoc, such as this:
+//	//  fmt.Println("Hello")
+//	// To do that, simply add an extra indent to your comment's text.
 type CodeBlocks int
 
 // There are several ways to embed links in godoc.
 //
-// Regular URLs
+// # Regular URLs
 //
 // Web addresses will automatically generate links in the HTML output,
 // like this: http://www.golang.org
 //
-// Documentation Links
+// # Documentation Links
 //
 // You can link to identifiers in the documentation with square brackets.
-//  - [Name] or [Name.Name] for a member of the current package
-//  - [pkg], [pkg.Name] or [pks.Name.Name] for a member of a foreign package
+//   - [Name] or [Name.Name] for a member of the current package
+//   - [pkg], [pkg.Name] or [pks.Name.Name] for a member of a foreign package
 //
-// Markdown-Style Links
+// # Markdown-Style Links
 //
 // Lines of the form "[something]: URL" turn the occurrences of [something]
 // into links to that URL with the text "something".
@@ -152,9 +162,11 @@ type CodeBlocks int
 // lines.
 //
 // For example:
-//  You can search for Go [online].
 //
-//  [online]: https://duckduckgo.com/?q=golang
+//	You can search for Go [online].
+//
+//	[online]: https://duckduckgo.com/?q=golang
+//
 // Results in:
 //
 // You can search for Go [online].
@@ -178,8 +190,10 @@ func (*Methods) Foo2() {}
 func NewMethods() *Methods { return nil }
 
 // You can mention bugs in the documentation. The syntax for that is like so:
-//  // BUG(username): Some information.
-//  // Some more information.
+//
+//	// BUG(username): Some information.
+//	// Some more information.
+//
 // This creates a section for bugs where each bug block is shown.
 // You can use words other than "BUG", like "TODO". By default, only BUG notes
 // are shown. If you run a godoc server locally, you can control that with
@@ -193,14 +207,16 @@ type Bugs int
 // [other unicode characters]) create lists.
 //
 // For example:
-//  This is my list
-//   - item 1
-//   - item 2
+//
+//	This is my list
+//	 - item 1
+//	 - item 2
+//
 // Results in:
 //
 // This is my list
-//  - item 1
-//  - item 2
+//   - item 1
+//   - item 2
 //
 // [other unicode characters]: https://go.dev/doc/comment#lists
 type Lists int

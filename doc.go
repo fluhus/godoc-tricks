@@ -27,11 +27,9 @@ package godoctricks
 // documentation, or for cases where you don't have a stable internet
 // connection.
 //
-// First you need to get the godoc tool:
+//	go run golang.org/x/tools/cmd/godoc@latest
 //
-//	go get golang.org/x/tools/cmd/godoc
-//
-// Then simply running godoc will make it listen on http://localhost:6060.
+// godoc will listen on http://localhost:6060.
 // Run with -h to see how you can control the port number and other options.
 type LocalServer int
 

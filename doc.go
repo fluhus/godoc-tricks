@@ -218,3 +218,10 @@ type Bugs int
 //
 // [other unicode characters]: https://go.dev/doc/comment#lists
 type Lists int
+
+// Interface are rendered like Struct:
+//   - exported methods are shown (with comments)
+//   - unexported methods are hidden
+type Interface interface {
+	Method()
+}

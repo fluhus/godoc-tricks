@@ -172,8 +172,35 @@ type CodeBlocks int
 // [online]: https://duckduckgo.com/?q=golang
 type Links int
 
-// Godoc associates methods with their receivers and attaches their documentation.
-// See below.
+// Methods are functions with receivers. Godoc associates methods with their
+// receivers and attaches their documentation. See below.
+type Methods int
+
+// Methods are attached to their receiver type in the godoc, regardless of
+// their physical location in the code.
+func (Methods) Foo() {}
+
+// Pointer receivers are also associated in the same way.
+func (*Methods) Foo2() {}
+
+// Functions that construct an instance of a type (or a pointer to it) are
+// associated with the returned type.
+func NewMethods() *Methods { return nil }
+
+// Struct will be shown with their exported fields. Unexported fields
+// will be hidden under a comment "contains filtered or unexported fields".
+// For instance the following struct
+//
+//	type Struct struct {
+//		// ExportedField can have a comment on the line above.
+//		ExportedField       int
+//		OtherExportedField  Links // or on the same line
+//		FieldWithoutComment struct{}
+//
+//		hidden int // unexported fields (and their comments) will not be shown in the documentation
+//	}
+//
+// will be rendered as:
 type Struct struct {
 	// ExportedField can have a comment on the line above.
 	ExportedField       int
@@ -181,19 +208,7 @@ type Struct struct {
 	FieldWithoutComment struct{}
 
 	hidden int // unexported fields (and their comments) will not be shown in the documentation
-	// a "contains filtered or unexported fields" comment will be shown instead
 }
-
-// Methods are attached to their receiver type in the godoc, regardless of
-// their physical location in the code.
-func (Struct) Method() {}
-
-// Pointer receivers are also associated in the same way.
-func (*Struct) PointerMethod() {}
-
-// Functions that construct an instance of a type (or a pointer to it) are
-// associated with the returned type.
-func NewStruct() *Struct { return nil }
 
 // You can mention bugs in the documentation. The syntax for that is like so:
 //

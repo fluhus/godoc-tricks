@@ -187,6 +187,29 @@ func (*Methods) Foo2() {}
 // associated with the returned type.
 func NewMethods() *Methods { return nil }
 
+// Struct will be shown with their exported fields. Unexported fields
+// will be hidden under a comment "contains filtered or unexported fields".
+// For instance the following struct
+//
+//	type Struct struct {
+//		// ExportedField can have a comment on the line above.
+//		ExportedField       int
+//		OtherExportedField  Links // or on the same line
+//		FieldWithoutComment struct{}
+//
+//		hidden int // unexported fields (and their comments) will not be shown in the documentation
+//	}
+//
+// will be rendered as:
+type Struct struct {
+	// ExportedField can have a comment on the line above.
+	ExportedField       int
+	OtherExportedField  Links // or on the same line
+	FieldWithoutComment struct{}
+
+	hidden int // unexported fields (and their comments) will not be shown in the documentation
+}
+
 // You can mention bugs in the documentation. The syntax for that is like so:
 //
 //	// BUG(username): Some information.

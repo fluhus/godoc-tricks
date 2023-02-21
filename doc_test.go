@@ -39,3 +39,9 @@ func ExampleExamples_output() {
 func ExampleNewExamples() {
 	fmt.Println("Hello", NewExamples())
 }
+
+// This function is named ExampleFuncExampleWithoutType(), this way godoc knows to associate
+// it with the FuncExampleWithoutType func.
+func ExampleFuncExampleWithoutType() {
+	fmt.Println("Hello", FuncExampleWithoutType())
+}

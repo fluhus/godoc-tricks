@@ -131,6 +131,12 @@ func NewExamples() Examples {
 	return 0
 }
 
+// FuncExampleWithoutType is a func with an associated example (but not associated type).
+// See [Examples] regarding the details.
+func FuncExampleWithoutType() int {
+	return 0
+}
+
 // You can embed blocks of code in your godoc, such as this:
 //
 //	fmt.Println("Hello")

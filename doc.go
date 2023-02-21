@@ -23,6 +23,8 @@
 // [open an issue]: https://github.com/fluhus/godoc-tricks/issues
 package godoctricks
 
+import "go/doc"
+
 // You can run a local godoc server. This is helpful for previewing
 // documentation, or for cases where you don't have a stable internet
 // connection.
@@ -150,7 +152,9 @@ type CodeBlocks int
 //
 // You can link to identifiers in the documentation with square brackets.
 //   - [Name] or [Name.Name] for a member of the current package
-//   - [pkg], [pkg.Name] or [pks.Name.Name] for a member of a foreign package
+//   - [pkg], [pkg.Name] or [pks.Name.Name] for a member of an imported package
+//   - [import/path/pkg], [import/path/pkg.Name] or [import/path/pkg.Name.Name]
+//     for a member of a non-imported package
 //
 // # Markdown-Style Links
 //
@@ -162,12 +166,18 @@ type CodeBlocks int
 // For example:
 //
 //	You can search for Go [online].
+//	See our [Links] section or [Methods.Foo].
+//	Go to the imported [doc] package or the [doc.Note] struct.
+//	Visit us under [github.com/fluhus/godoc-tricks.Links]
 //
 //	[online]: https://duckduckgo.com/?q=golang
 //
 // Results in:
 //
 // You can search for Go [online].
+// See our [Links] section or [Methods.Foo].
+// Go to the imported [doc] package or the [doc.Note] struct.
+// Visit us under [github.com/fluhus/godoc-tricks.Links].
 //
 // [online]: https://duckduckgo.com/?q=golang
 type Links int
@@ -219,7 +229,7 @@ type Struct struct {
 // You can use words other than "BUG", like "TODO". By default, only BUG notes
 // are shown. If you run a godoc server locally, you can control that with
 // the -notes argument. For example, -notes="BUG|TODO".
-type Bugs int
+type Bugs doc.Note
 
 // BUG(amit): This is an example bug.
 // See the bugs section.

@@ -126,6 +126,11 @@ const (
 // http://golang.org/pkg/testing/
 type Examples int
 
+// NewExamples is a func with an associated example. See [Examples] regarding the details.
+func NewExamples() Examples {
+	return 0
+}
+
 // You can embed blocks of code in your godoc, such as this:
 //
 //	fmt.Println("Hello")

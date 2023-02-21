@@ -33,3 +33,9 @@ func ExampleExamples_output() {
 	fmt.Println("Hello")
 	// Output: Hello
 }
+
+// This function is named ExampleNewExamples(), this way godoc knows to associate
+// it with the NewExamples func.
+func ExampleNewExamples() {
+	fmt.Println("Hello", NewExamples())
+}

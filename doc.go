@@ -107,9 +107,11 @@ const (
 //
 // The example functions should be called Example() for
 // package examples, ExampleTypename() for a specific type or
-// ExampleFuncname() for a specific function. For multiple examples
-// for the same entity (like same function), you can add a suffix like
-// ExampleFoo_suffix1, ExampleFoo_suffix2.
+// ExampleFuncname() for a specific function, ExampleTypename_Methodname() for
+// a method on a specific type.
+//
+// For multiple examples for the same entity (like same function), you can add
+// a suffix starting with a lowercase like ExampleFoo_suffix1, ExampleFoo_suffix2.
 //
 // You can document an example's output, by adding an output comment at its end.
 // The output comment must begin with "Output:", as shown below:
@@ -129,6 +131,11 @@ type Examples int
 // NewExamples is a func with an associated example. See [Examples] regarding the details.
 func NewExamples() Examples {
 	return 0
+}
+
+// ExampleMethod is a method with an associated example. See [Examples] regarding the details.
+func (e Examples) ExampleMethod() int {
+	return int(e)
 }
 
 // FuncExampleWithoutType is a func with an associated example (but not associated type).

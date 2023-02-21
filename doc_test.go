@@ -40,6 +40,13 @@ func ExampleNewExamples() {
 	fmt.Println("Hello", NewExamples())
 }
 
+// This function is named ExampleExamples_ExampleMethod(), this way godoc knows to associate
+// it with the ExampleMethod method of the Examples type.
+func ExampleExamples_ExampleMethod() {
+	e := Examples(42)
+	fmt.Println("Hello", e.ExampleMethod())
+}
+
 // This function is named ExampleFuncExampleWithoutType(), this way godoc knows to associate
 // it with the FuncExampleWithoutType func.
 func ExampleFuncExampleWithoutType() {

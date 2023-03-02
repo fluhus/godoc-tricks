@@ -226,13 +226,19 @@ type Struct struct {
 //	// Some more information.
 //
 // This creates a section for bugs where each bug block is shown.
-// You can use words other than "BUG", like "TODO". By default, only BUG notes
-// are shown. If you run a godoc server locally, you can control that with
-// the -notes argument. For example, -notes="BUG|TODO".
+
+// You can use words other than "BUG", like "TODO". General syntax:
+// MARKER(uid), with MARKER at least 2 chars (all caps) and uid at least 1 char.
+//
+// By default, only BUG notes are shown. If you run a godoc server locally, you
+// can control that with the -notes argument. For example, -notes="BUG|TODO".
 type Bugs doc.Note
 
 // BUG(amit): This is an example bug.
-// See the bugs section.
+// See the [Bugs] section.
+
+// TODO(oliverpool): This is an example todo (hidden from godoc, unless run with -notes="BUG|TODO").
+// See the [Bugs] section.
 
 // Indented lines that start with dashes, stars, or pluses (or
 // [other unicode characters]) create lists.

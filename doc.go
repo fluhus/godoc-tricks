@@ -14,12 +14,6 @@
 //
 // By Amit Lavon.
 //
-// # Update: Go 1.19 is here!
-//
-// The new version introduces a few additions to what the godoc tool can
-// recognize. You can see them below at [Links], [Headings] and [Lists].
-// The official documentation is at: https://go.dev/doc/comment
-//
 // [open an issue]: https://github.com/fluhus/godoc-tricks/issues
 package godoctricks
 
@@ -282,3 +276,13 @@ type Lists int
 type Interface interface {
 	Method()
 }
+
+// You can mark a function or type as deprecated by adding a line that starts
+// with "Deprecated:".
+// See [Deprecated].
+type Deprecation int
+
+// An example deprecated type.
+//
+// Deprecated: use the new thing instead. See [Deprecation].
+type Deprecated int

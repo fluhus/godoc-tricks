@@ -1,3 +1,3 @@
 module github.com/fluhus/godoc-tricks
 
-go 1.19
+go 1.24
